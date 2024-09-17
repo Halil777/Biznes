@@ -1,0 +1,15 @@
+.service_cards_container {
+  display: flex;
+  border-radius: 12px;
+  border: 2px solid #ffa500;
+  padding: 30px 10px;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .service_cards_container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}

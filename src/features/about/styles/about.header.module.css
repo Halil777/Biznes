@@ -1,0 +1,16 @@
+.headerText {
+  text-align: center;
+  color: #ffa500;
+  font-family: Poppins;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 72px;
+}
+
+@media (max-width: 768px) {
+  .headerText {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 30px;
+  }
+}

@@ -1,0 +1,16 @@
+.copyright_text {
+  font-family: Poppins;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 31.5px;
+  letter-spacing: 0.03em;
+  color: #ffa500;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  .copyright_text {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+}

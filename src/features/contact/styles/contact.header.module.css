@@ -1,0 +1,35 @@
+.contact_header_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.headerText {
+  text-align: center;
+  color: #ffa500;
+  font-family: Poppins;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 72px;
+}
+
+.subtitle {
+  font-family: Poppins;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 36px;
+  text-align: center;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .headerText {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 30px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}

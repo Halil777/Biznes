@@ -1,0 +1,11 @@
+.social_links_container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.social_links_container img {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+}

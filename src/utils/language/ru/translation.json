@@ -1,0 +1,40 @@
+{
+  "navbar": {
+    "home": "Главная",
+    "about": "О нас",
+    "portfolio": "Портфолио",
+    "services": "Наши услуги",
+    "contact": "Контакт"
+  },
+
+  "contact": {
+    "name": "Полное имя",
+    "mail": "Почта",
+    "message": "Сообщение",
+    "send": "Отправлять",
+    "address": "Наш адрес",
+    "addressC": "Yylgay Durdyyev 50 (Gyrat), 3-й этаж",
+    "phone": "Наш номер телефона",
+    "contact": "Свяжитесь с нами",
+    "contactC": "чтобы разработать стратегию вашего бизнеса",
+    "success": "Сообщение успешно отправлено",
+    "error": "Ошибка при отправке сообщения",
+    "number": "Номер телефона",
+    "thema": "Тема",
+    "other": "Другой",
+    "subtitle": "Ready to take your business to the next level? Contact us today to schedule a consultation with Iskander Kerimov. We're here to answer any questions and provide the support you need to succeed."
+  },
+
+  "about": {
+    "title": "КТО МЫ"
+  },
+
+  "portfolio": {
+    "title": "Выдающиеся работы моего бизнес-коучинга",
+    "button_text": "Читать далее"
+  },
+
+  "common": {
+    "read_more": "Читать далее"
+  }
+}

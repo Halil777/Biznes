@@ -1,0 +1,40 @@
+{
+  "navbar": {
+    "home": "Baş Sahypa",
+    "about": "Biz barada",
+    "portfolio": "Portfolio",
+    "services": "Hyzmatlarymyz",
+    "contact": "Habarlaşmak"
+  },
+
+  "contact": {
+    "name": "Doly Ady",
+    "mail": "Poçta",
+    "message": "Hat",
+    "send": "Ugratmak",
+    "address": "Biziň Salgymyz",
+    "addressC": "Ýylgaý Durdyýew 50 (Gyrat), 3-nji gat",
+    "phone": "Biziň Telefon Belgimiz",
+    "contact": "Habarlaşmak",
+    "contactC": "strategiýa düzmek üçin bize ýüz tutuň",
+    "success": "Hat üstünlikli ugradyldy",
+    "error": "Hat ugratmakda ýalňyşlyk ýüze çykdy",
+    "number": "Telefon Belgisi",
+    "thema": "Теmа",
+    "other": "Başga",
+    "subtitle": "Ready to take your business to the next level? Contact us today to schedule a consultation with Iskander Kerimov. We're here to answer any questions and provide the support you need to succeed."
+  },
+
+  "about": {
+    "title": "Biz Kim"
+  },
+
+  "portfolio": {
+    "title": "Biznes maslahatçymyň aýratyn işleriniň jemleri",
+    "button_text": "Giňişleýin okamak"
+  },
+
+  "common": {
+    "read_more": "Has giňişleýin"
+  }
+}

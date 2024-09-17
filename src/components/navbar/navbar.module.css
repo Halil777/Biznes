@@ -1,0 +1,124 @@
+/* Main Navbar Container */
+.navbar_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 120px;
+  padding: 0 5%;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.scrolled {
+  background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  height: 80px;
+}
+
+/* Hide the menu icon on desktop */
+.menu_container {
+  display: none;
+}
+
+/* Desktop Navbar Links */
+.navbar_links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar_links a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.navbar_links .activeLink {
+  text-decoration: none;
+  color: #fff;
+  background: #6366f1;
+  padding: 10px 15px;
+  border-radius: 8px;
+}
+
+.navbar_links .activeLink:nth-child(1) {
+  border-radius: 8px 0px 0px 8px;
+}
+
+.navbar_links .activeLink:last-child {
+  border-radius: 0px 8px 8px 0px;
+}
+
+/* Language and Social Links Container */
+.navbar_last_items {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Hamburger Menu Icon for Mobile */
+.menu_icon {
+  cursor: pointer;
+}
+
+/* Navbar Links in Responsive Menu */
+.responsive_nav_links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.responsive_nav_links a {
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+/* Language and Social Links at the Bottom of the Responsive Menu */
+.responsive_menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  z-index: 999;
+  transition: transform 0.3s ease-in-out;
+  padding: 40px 30px;
+}
+
+.responsive_menu.isOpen {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.responsive_menu_bottom {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 767px) {
+  .navbar_last_items {
+    display: none;
+  }
+
+  .navbar_links {
+    display: none;
+  }
+
+  .menu_container {
+    display: block;
+  }
+}

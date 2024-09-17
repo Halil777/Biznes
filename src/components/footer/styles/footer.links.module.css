@@ -1,0 +1,29 @@
+.footer_links_container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: -30px;
+}
+
+.footer_links_container a {
+  text-decoration: none;
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 60px;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .footer_links_container {
+    display: flex;
+    gap: 15px;
+    margin-top: -35px;
+  }
+
+  .footer_links_container a {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 50px;
+  }
+}

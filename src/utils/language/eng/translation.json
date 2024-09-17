@@ -1,0 +1,40 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About us",
+    "portfolio": "Portfolio",
+    "services": "Services",
+    "contact": "Contact"
+  },
+
+  "contact": {
+    "name": "Full Name",
+    "mail": "Mail",
+    "message": "Message",
+    "send": "Send",
+    "address": "Our Address",
+    "addressC": "Yylgay Durdyyev 50 (Gyrat), 3rd floor",
+    "phone": "Our Phone Number",
+    "contact": "Contact us",
+    "contactC": "to strategize about your business",
+    "success": "Message sent successfully",
+    "error": "Error sending message",
+    "number": "Phone Number",
+    "thema": "Subject",
+    "other": "Other",
+    "subtitle": "Ready to take your business to the next level? Contact us today to schedule a consultation with Iskander Kerimov. We're here to answer any questions and provide the support you need to succeed."
+  },
+
+  "about": {
+    "title": "Who we are"
+  },
+
+  "portfolio": {
+    "title": "Prominent works of my business coaching",
+    "button_text": "Read More"
+  },
+
+  "common": {
+    "read_more": "Read More"
+  }
+}

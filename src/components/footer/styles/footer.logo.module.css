@@ -1,0 +1,12 @@
+.footer_logo_container img {
+  width: 320px;
+  height: 136px;
+  object-fit: cover;
+}
+
+@media (max-width: 767px) {
+  .footer_logo_container img {
+    width: 230px;
+    height: 120px;
+  }
+}

@@ -1,0 +1,38 @@
+.languageWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.languageIcon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.menu {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  border-radius: 8px;
+  z-index: 1000;
+  padding: 10px;
+  background-color: #fff; /* Ensure the background is visible */
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  cursor: pointer;
+  color: #000; /* Adjust color as needed */
+}
+
+.menuItem:hover {
+  background-color: #181f31;
+}
+
+.flagIcon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
