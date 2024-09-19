@@ -5,7 +5,7 @@ import styles from "./navbar.module.css";
 import NavbarLogo from "./NavbarLogo";
 import { useTranslation } from "react-i18next";
 
-const Navbar: FC = () => {
+const Navbar: FC<{ activeSection: string }> = ({ activeSection }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("#home");
   const menuRef = useRef<HTMLDivElement>(null);
@@ -48,6 +48,36 @@ const Navbar: FC = () => {
   const memoizedLanguage = useMemo(() => <Language />, []);
   const memoizedSocialLinks = useMemo(() => <SocialLinks />, []);
 
+  // Add IntersectionObserver to track scrolling and update active link
+  useEffect(() => {
+    const sections = document.querySelectorAll("section"); // Assumes each section has a corresponding tag
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveLink(`#${entry.target.id}`);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.3, // Change this value based on when you want the active link to change
+      }
+    );
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        observer.unobserve(section);
+      });
+    };
+  }, []);
+
   return (
     <div
       className={`${styles.navbar_container} ${
@@ -60,36 +90,31 @@ const Navbar: FC = () => {
       <div className={styles.navbar_links}>
         <a
           href="#home"
-          className={activeLink === "#home" ? styles.activeLink : ""}
-          onClick={() => handleLinkClick("#home")}
+          className={activeSection === "#home" ? styles.activeLink : ""}
         >
           {t("navbar.home")}
         </a>
         <a
           href="#about"
-          className={activeLink === "#about" ? styles.activeLink : ""}
-          onClick={() => handleLinkClick("#about")}
+          className={activeSection === "#about" ? styles.activeLink : ""}
         >
           {t("navbar.about")}
         </a>
         <a
           href="#portfolio"
-          className={activeLink === "#portfolio" ? styles.activeLink : ""}
-          onClick={() => handleLinkClick("#portfolio")}
+          className={activeSection === "#portfolio" ? styles.activeLink : ""}
         >
           {t("navbar.portfolio")}
         </a>
         <a
           href="#services"
-          className={activeLink === "#services" ? styles.activeLink : ""}
-          onClick={() => handleLinkClick("#services")}
+          className={activeSection === "#services" ? styles.activeLink : ""}
         >
           {t("navbar.services")}
         </a>
         <a
           href="#contact"
-          className={activeLink === "#contact" ? styles.activeLink : ""}
-          onClick={() => handleLinkClick("#contact")}
+          className={activeSection === "#contact" ? styles.activeLink : ""}
         >
           {t("navbar.contact")}
         </a>

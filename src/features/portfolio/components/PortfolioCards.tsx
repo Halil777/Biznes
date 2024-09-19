@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { LazyLoadImage } from "react-lazy-load-image-component"; // Import LazyLoadImage
+import "react-lazy-load-image-component/src/effects/blur.css"; // Optional for blur effect
 import styles from "../styles/portfolioCards.module.css";
 import { useFetchByType } from "../../../api/api";
 import PortfolioModal from "./PortfolioModal";
@@ -31,7 +33,12 @@ const PortfolioCards: React.FC = () => {
       {data.length > 0 ? (
         data.map((portfolio: any) => (
           <div key={portfolio.id} className={styles.portfolio_card}>
-            <img src={portfolio.asset.url} alt={portfolio[titleKey]} />
+            <LazyLoadImage
+              src={portfolio.asset.url}
+              alt={portfolio[titleKey]}
+              effect="blur" // Optional: blur effect while loading
+              className={styles.portfolio_image}
+            />
             <div className={styles.portfolio_text_container}>
               <h3 className={styles.portfolio_title}>{portfolio[titleKey]}</h3>
               <div className={styles.description_container}>

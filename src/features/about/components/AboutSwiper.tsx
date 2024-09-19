@@ -1,6 +1,8 @@
 import React from "react";
 import Slider from "react-slick";
 import { useTranslation } from "react-i18next";
+import { LazyLoadImage } from "react-lazy-load-image-component"; // Import LazyLoadImage
+import "react-lazy-load-image-component/src/effects/blur.css"; // Optional for blur effect
 import { useFetchByType } from "../../../api/api";
 import styles from "../styles/about.swiper.module.css";
 
@@ -8,35 +10,35 @@ const settings = {
   dots: true,
   infinite: true,
   speed: 1500,
-  slidesToShow: 4, // Default number of slides
+  slidesToShow: 4,
   slidesToScroll: 1,
   autoplay: true,
   autoplaySpeed: 3000,
   arrows: false,
   responsive: [
     {
-      breakpoint: 1200, // LG screens
+      breakpoint: 1200,
       settings: {
         slidesToShow: 4,
         slidesToScroll: 4,
       },
     },
     {
-      breakpoint: 992, // MD screens
+      breakpoint: 992,
       settings: {
         slidesToShow: 3,
         slidesToScroll: 3,
       },
     },
     {
-      breakpoint: 768, // SM screens
+      breakpoint: 768,
       settings: {
         slidesToShow: 2,
         slidesToScroll: 2,
       },
     },
     {
-      breakpoint: 576, // XS screens
+      breakpoint: 576,
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -55,7 +57,7 @@ const AboutSwiper: React.FC = () => {
   return (
     <div className={styles.swiperContainer}>
       <Slider {...settings}>
-        {data.map((item) => {
+        {data.map((item: any) => {
           const title =
             i18n.language === "en"
               ? item.title_en || "Default Title"
@@ -66,9 +68,10 @@ const AboutSwiper: React.FC = () => {
           return (
             <div key={item.id}>
               <div className={styles.slide}>
-                <img
+                <LazyLoadImage
                   src={item.asset?.url || "default_image.jpg"}
                   alt={title}
+                  effect="blur" // Optional: blur effect while loading
                   className={styles.image}
                 />
                 <div className={styles.textContainer}>

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styles from "../styles/service.items.module.css";
 import { useTranslation } from "react-i18next";
+import { LazyLoadImage } from "react-lazy-load-image-component"; // Import LazyLoadImage
+import "react-lazy-load-image-component/src/effects/blur.css"; // Optional for blur effect
 
 interface Item {
   id: number;
@@ -38,7 +40,12 @@ const ServiceItems: React.FC<ServiceItemsProps> = ({ items }) => {
         >
           <div className={styles.item_header}>
             <div className={styles.item_picture_title}>
-              <img src={item.asset.url} alt={(item as any)[titleKey]} />
+              <LazyLoadImage
+                src={item.asset.url}
+                alt={(item as any)[titleKey]}
+                effect="blur" // Optional: blur effect while loading
+                className={styles.item_image} // Add any specific styling if needed
+              />
               <h3 className={styles.item_title}>{(item as any)[titleKey]}</h3>
             </div>
             <button

@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "../styles/service.slides.module.css";
 import { useTranslation } from "react-i18next";
+import { LazyLoadImage } from "react-lazy-load-image-component"; // Import LazyLoadImage
+import "react-lazy-load-image-component/src/effects/blur.css"; // Optional for blur effect
 
 interface Slide {
   id: number;
@@ -29,9 +31,31 @@ const ServiceSlides: React.FC<ServiceSlidesProps> = ({ slide, hasItems }) => {
   return (
     <>
       {hasItems ? (
-        <>
-          <div className={styles.service_slides_container}>
-            <img src={slide.asset.url} alt={(slide as any)[titleKey]} />
+        <div className={styles.service_slides_container}>
+          <LazyLoadImage
+            src={slide.asset.url}
+            alt={(slide as any)[titleKey]}
+            effect="blur" // Optional: blur effect while loading
+            className={styles.image} // Add any specific styling if needed
+          />
+          <h1 className={styles.slide_title}>{(slide as any)[titleKey]}</h1>
+
+          <p
+            className={styles.slide_description}
+            dangerouslySetInnerHTML={{
+              __html: (slide as any)[descriptionKey],
+            }}
+          />
+        </div>
+      ) : (
+        <div className={styles.service_slides_container_noItems}>
+          <LazyLoadImage
+            src={slide.asset.url}
+            alt={(slide as any)[titleKey]}
+            effect="blur" // Optional: blur effect while loading
+            className={styles.image} // Add any specific styling if needed
+          />
+          <div className={styles.noItemsTexts}>
             <h1 className={styles.slide_title}>{(slide as any)[titleKey]}</h1>
 
             <p
@@ -41,23 +65,7 @@ const ServiceSlides: React.FC<ServiceSlidesProps> = ({ slide, hasItems }) => {
               }}
             />
           </div>
-        </>
-      ) : (
-        <>
-          <div className={styles.service_slides_container_noItems}>
-            <img src={slide.asset.url} alt={(slide as any)[titleKey]} />
-            <div className={styles.noItemsTexts}>
-              <h1 className={styles.slide_title}>{(slide as any)[titleKey]}</h1>
-
-              <p
-                className={styles.slide_description}
-                dangerouslySetInnerHTML={{
-                  __html: (slide as any)[descriptionKey],
-                }}
-              />
-            </div>
-          </div>
-        </>
+        </div>
       )}
     </>
   );

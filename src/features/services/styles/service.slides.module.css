@@ -43,7 +43,7 @@
 }
 
 .service_slides_container_noItems img {
-  width: 25%;
+  width: 300px;
   border-radius: 6px;
   height: 200px;
   object-fit: cover;

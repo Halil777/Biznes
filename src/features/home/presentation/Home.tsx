@@ -1,7 +1,9 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { useInView } from "react-intersection-observer";
-import { motion } from "framer-motion"; // Import Framer Motion
+import { motion } from "framer-motion";
+import { LazyLoadImage } from "react-lazy-load-image-component"; // Import LazyLoadImage
+import "react-lazy-load-image-component/src/effects/blur.css"; // Optional for blur effect
 import styles from "../styles/home.module.css";
 import { useFetchByType } from "../../../api/api";
 
@@ -33,11 +35,11 @@ const Home: React.FC = () => {
           key={`home_items_${items.id}`}
         >
           <div className={styles.content}>
-            <h1 className={styles.title}>{(items as any)[titleKey]}</h1>
+            <h1 className={styles.title}>{items[titleKey]}</h1>
             <p
               className={styles.description}
               dangerouslySetInnerHTML={{
-                __html: (items as any)[descriptionKey],
+                __html: items[descriptionKey],
               }}
             />
             <a href="#contact">
@@ -55,12 +57,12 @@ const Home: React.FC = () => {
           >
             <div className={styles.shape_image}>
               <div className={styles.liquid_shape}></div>
-              {/* <img src="/shapes/shape1.png" alt="" loading="lazy" /> */}
             </div>
-            <img
+            <LazyLoadImage
               src={items.asset?.url || "default_image.jpg"}
               alt={t("homeImageAlt")}
               className={styles.image}
+              effect="blur" // Optional: add a blur effect while loading
               loading="lazy"
             />
           </motion.div>
