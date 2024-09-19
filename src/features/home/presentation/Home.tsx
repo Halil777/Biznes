@@ -10,8 +10,8 @@ const Home: React.FC = () => {
   const { data, error, isLoading } = useFetchByType("home_title");
 
   const { ref, inView } = useInView({
-    triggerOnce: true, // Trigger animation only once
-    threshold: 0.2, // Trigger when 20% of the component is visible
+    triggerOnce: true,
+    threshold: 0.2,
   });
 
   if (isLoading) return <div>{t("loading")}</div>;
@@ -54,7 +54,8 @@ const Home: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <div className={styles.shape_image}>
-              <img src="/shapes/shape1.png" alt="" loading="lazy" />
+              <div className={styles.liquid_shape}></div>
+              {/* <img src="/shapes/shape1.png" alt="" loading="lazy" /> */}
             </div>
             <img
               src={items.asset?.url || "default_image.jpg"}

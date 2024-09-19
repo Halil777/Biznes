@@ -27,8 +27,8 @@
 @media (max-width: 768px) {
   .footer_address_container {
     display: flex;
-    align-items: center;
-    gap: 20px;
+    flex-direction: column;
+    gap: 5px;
   }
 
   .footer_address p {

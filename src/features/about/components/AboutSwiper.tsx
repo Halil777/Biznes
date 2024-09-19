@@ -64,14 +64,16 @@ const AboutSwiper: React.FC = () => {
                 "Default Title";
 
           return (
-            <div key={item.id} className={styles.slide}>
-              <img
-                src={item.asset?.url || "default_image.jpg"}
-                alt={title}
-                className={styles.image}
-              />
-              <div className={styles.textContainer}>
-                <h3 className={styles.title}>{title}</h3>
+            <div key={item.id}>
+              <div className={styles.slide}>
+                <img
+                  src={item.asset?.url || "default_image.jpg"}
+                  alt={title}
+                  className={styles.image}
+                />
+                <div className={styles.textContainer}>
+                  <h3 className={styles.title}>{title}</h3>
+                </div>
               </div>
             </div>
           );

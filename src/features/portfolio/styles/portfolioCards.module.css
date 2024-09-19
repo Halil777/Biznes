@@ -126,3 +126,14 @@
   transform: scale(0.98);
   background: #4338ca;
 }
+
+@media (max-width: 767px) {
+  .description_container {
+    height: 220px;
+  }
+
+  .portfolio_description {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+}

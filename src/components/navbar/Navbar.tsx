@@ -3,12 +3,14 @@ import Language from "../../utils/language/Language";
 import SocialLinks from "../social/SocialLinks";
 import styles from "./navbar.module.css";
 import NavbarLogo from "./NavbarLogo";
+import { useTranslation } from "react-i18next";
 
 const Navbar: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState("#home"); // State to track active link
+  const [activeLink, setActiveLink] = useState("#home");
   const menuRef = useRef<HTMLDivElement>(null);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { t } = useTranslation();
 
   const toggleMenu = useCallback(() => {
     setIsMenuOpen((prev) => !prev);
@@ -61,39 +63,38 @@ const Navbar: FC = () => {
           className={activeLink === "#home" ? styles.activeLink : ""}
           onClick={() => handleLinkClick("#home")}
         >
-          Home
+          {t("navbar.home")}
         </a>
         <a
           href="#about"
           className={activeLink === "#about" ? styles.activeLink : ""}
           onClick={() => handleLinkClick("#about")}
         >
-          About
+          {t("navbar.about")}
         </a>
         <a
           href="#portfolio"
           className={activeLink === "#portfolio" ? styles.activeLink : ""}
           onClick={() => handleLinkClick("#portfolio")}
         >
-          Portfolio
+          {t("navbar.portfolio")}
         </a>
         <a
           href="#services"
           className={activeLink === "#services" ? styles.activeLink : ""}
           onClick={() => handleLinkClick("#services")}
         >
-          Services
+          {t("navbar.services")}
         </a>
         <a
           href="#contact"
           className={activeLink === "#contact" ? styles.activeLink : ""}
           onClick={() => handleLinkClick("#contact")}
         >
-          Contact
+          {t("navbar.contact")}
         </a>
       </div>
 
-      {/* Language and Social Links */}
       <div className={styles.navbar_last_items}>
         {memoizedLanguage}
         {memoizedSocialLinks}
@@ -121,7 +122,7 @@ const Navbar: FC = () => {
               }}
               className={activeLink === "#home" ? styles.activeLink : ""}
             >
-              Home
+              {t("navbar.home")}
             </a>
             <a
               href="#about"
@@ -131,7 +132,7 @@ const Navbar: FC = () => {
               }}
               className={activeLink === "#about" ? styles.activeLink : ""}
             >
-              About
+              {t("navbar.about")}
             </a>
             <a
               href="#portfolio"
@@ -141,7 +142,7 @@ const Navbar: FC = () => {
               }}
               className={activeLink === "#portfolio" ? styles.activeLink : ""}
             >
-              Portfolio
+              {t("navbar.portfolio")}
             </a>
             <a
               href="#services"
@@ -151,7 +152,7 @@ const Navbar: FC = () => {
               }}
               className={activeLink === "#services" ? styles.activeLink : ""}
             >
-              Services
+              {t("navbar.services")}
             </a>
             <a
               href="#contact"
@@ -161,7 +162,7 @@ const Navbar: FC = () => {
               }}
               className={activeLink === "#contact" ? styles.activeLink : ""}
             >
-              Contact
+              {t("navbar.contact")}
             </a>
           </div>
           <div className={styles.responsive_menu_bottom}>

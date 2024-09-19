@@ -1,4 +1,5 @@
 import React, { FC, Suspense } from "react";
+import Loading from "../components/loading/Loading";
 
 // Use React.lazy to import components
 const Navbar = React.lazy(() => import("../components/navbar/Navbar"));
@@ -18,7 +19,13 @@ const Footer = React.lazy(() => import("../components/footer/Footer"));
 const App: FC = () => {
   return (
     <div>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense
+        fallback={
+          <div>
+            <Loading />
+          </div>
+        }
+      >
         <Navbar />
         <Home />
         <About />

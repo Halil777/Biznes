@@ -41,7 +41,7 @@ const Language: FC = () => {
             }`}
             onClick={() => changeLanguage("tm")}
           >
-            <img src={tmFlag} alt="Turkmen" className={styles.flagIcon} />{" "}
+            <img src={tmFlag} alt="Turkmen" className={styles.flagIcon} />
             Türkmen
           </div>
           <div
@@ -50,7 +50,7 @@ const Language: FC = () => {
             }`}
             onClick={() => changeLanguage("ru")}
           >
-            <img src={ruFlag} alt="Russian" className={styles.flagIcon} />{" "}
+            <img src={ruFlag} alt="Russian" className={styles.flagIcon} />
             Русский
           </div>
           <div
@@ -59,7 +59,7 @@ const Language: FC = () => {
             }`}
             onClick={() => changeLanguage("en")}
           >
-            <img src={enFlag} alt="English" className={styles.flagIcon} />{" "}
+            <img src={enFlag} alt="English" className={styles.flagIcon} />
             English
           </div>
         </div>

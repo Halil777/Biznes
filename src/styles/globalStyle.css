@@ -12,6 +12,10 @@ body {
   background-color: #0f172a;
 }
 
+.slick-slide {
+  padding: 0 15px; /* Add padding between slides */
+}
+
 .slick-dots {
   display: flex;
   align-items: center;
@@ -36,4 +40,11 @@ body {
 
 .slick-dots li button:hover {
   background-color: #aaa;
+}
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
 }
