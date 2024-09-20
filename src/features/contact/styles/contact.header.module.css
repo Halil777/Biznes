@@ -14,11 +14,12 @@
 
 .subtitle {
   font-family: Poppins;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 400;
   line-height: 36px;
   text-align: center;
   color: #fff;
+  margin: 20px 0px;
 }
 
 @media (max-width: 768px) {
@@ -31,5 +32,6 @@
   .subtitle {
     font-size: 16px;
     line-height: 20px;
+    text-align: justify;
   }
 }

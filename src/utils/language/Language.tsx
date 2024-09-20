@@ -1,4 +1,4 @@
-import { FC, useState, useEffect } from "react";
+import { FC, useState, useEffect, useRef } from "react";
 import tmFlag from "/images/tm.png";
 import ruFlag from "/images/ru.png";
 import enFlag from "/images/en.png";
@@ -11,6 +11,7 @@ const Language: FC = () => {
   const [selectedLanguage, setSelectedLanguage] = useState<string>(
     localStorage.getItem("language") || "en"
   );
+  const menuRef = useRef<HTMLDivElement>(null);
 
   // Update the language on initial render based on localStorage
   useEffect(() => {
@@ -25,8 +26,26 @@ const Language: FC = () => {
     setMenuOpen(false);
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setMenuOpen(false);
+      }
+    };
+
+    if (menuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [menuOpen]);
+
   return (
-    <div className={styles.languageWrapper}>
+    <div className={styles.languageWrapper} ref={menuRef}>
       <img
         src={languageIcon}
         alt="Select Language"

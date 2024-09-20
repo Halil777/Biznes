@@ -24,7 +24,6 @@ const ContactForm: React.FC = () => {
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  // Handle form input change
   const handleChange = (
     event: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
@@ -40,9 +39,8 @@ const ContactForm: React.FC = () => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    // Prepare the request body
     const requestBody = {
-      to_mail: "microsoft7779@gmail.com", // Your recipient email
+      to_mail: "info@ikmaslahat.com",
       username: formData.username,
       email: formData.email,
       phone: formData.phone,
@@ -63,7 +61,6 @@ const ContactForm: React.FC = () => {
       );
 
       if (response.ok) {
-        // If the response is successful
         setSuccessMessage("Message sent successfully!");
         setFormData({
           username: "",
@@ -73,7 +70,6 @@ const ContactForm: React.FC = () => {
           theme: "",
         });
       } else {
-        // Handle errors from the server
         const errorData = await response.json();
         setErrorMessage(
           `Error: ${errorData.message || "Failed to send message."}`
@@ -89,7 +85,6 @@ const ContactForm: React.FC = () => {
 
   const subjectTitleKey = `title_${i18n.language}`;
 
-  // Automatically hide success or error messages after 3 seconds
   useEffect(() => {
     if (successMessage || errorMessage) {
       const timer = setTimeout(() => {
@@ -97,7 +92,7 @@ const ContactForm: React.FC = () => {
         setErrorMessage(null);
       }, 3000);
 
-      return () => clearTimeout(timer); // Cleanup the timer
+      return () => clearTimeout(timer);
     }
   }, [successMessage, errorMessage]);
 
