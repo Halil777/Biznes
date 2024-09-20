@@ -19,7 +19,6 @@ const Footer = React.lazy(() => import("../components/footer/Footer"));
 const App: FC = () => {
   const [activeSection, setActiveSection] = useState("#home");
 
-  // Function to handle section change based on scroll
   const handleScroll = () => {
     const sections = document.querySelectorAll("section");
     let currentSection = "#home"; // Default to home section
@@ -47,7 +46,6 @@ const App: FC = () => {
     <div>
       <Suspense fallback={<Loading />}>
         <Navbar activeSection={activeSection} />
-        {/* Pass active section to Navbar */}
         <section id="home">
           <Home />
         </section>
